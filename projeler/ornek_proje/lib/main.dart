@@ -20,7 +20,38 @@ class myApp extends StatelessWidget {
           backgroundColor: Colors.indigo.shade200,
           centerTitle: true,
         ),
-        body: Text('Merhaba, Flutter!'),
+
+        /* body: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center, // Tam ortada hizalama
+            children: [
+              Text('Merhaba, Flutter!'),
+              Image.asset(
+                "assets/images/postgrescrnshot.png",
+                width: 200,
+                height: 200,
+              ),
+            ],
+          ),
+        ),*/
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, // Tam ortada hizalama
+            crossAxisAlignment:
+                CrossAxisAlignment.center, // Yatayda sola hizalama
+            children: [
+              Text('Merhaba, Flutter!'),
+              SizedBox(height: 50), // Yatayda boşluk bırakma
+              Text('Bu bir örnek projedir.'),
+              SizedBox(height: 20), // Yatayda boşluk bırakma
+              Image.asset(
+                "assets/images/postgrescrnshot.png",
+                width: 200,
+                height: 200,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
