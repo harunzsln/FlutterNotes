@@ -40,7 +40,7 @@ class myApp extends StatelessWidget {
             crossAxisAlignment:
                 CrossAxisAlignment.center, // Yatayda sola hizalama
             children: [
-              Text('Merhaba, Flutter!'),
+              /* Text('Merhaba, Flutter!'),
               SizedBox(height: 50), // Yatayda boşluk bırakma
               Text('Bu bir örnek projedir.'),
               SizedBox(height: 20), // Yatayda boşluk bırakma
@@ -48,6 +48,12 @@ class myApp extends StatelessWidget {
                 "assets/images/postgrescrnshot.png",
                 width: 200,
                 height: 200,
+              ),*/
+              ElevatedButton(
+                onPressed: () {
+                  print("Butona tıklandı");
+                },
+                child: Text("Bana Tikla"),
               ),
             ],
           ),
