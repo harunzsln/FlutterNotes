@@ -36,9 +36,7 @@ class myApp extends StatelessWidget {
         ),*/
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, // Tam ortada hizalama
-            crossAxisAlignment:
-                CrossAxisAlignment.center, // Yatayda sola hizalama
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               /* Text('Merhaba, Flutter!'),
               SizedBox(height: 50), // Yatayda boşluk bırakma
@@ -53,7 +51,24 @@ class myApp extends StatelessWidget {
                 onPressed: () {
                   print("Butona tıklandı");
                 },
-                child: Text("Bana Tikla"),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.indigo),
+                child: Text(
+                  "Bana Tikla",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.amber,
+                  ),
+                ),
+              ),
+              TextButton(onPressed: () {}, child: Text("Bana Tikla")),
+
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.directions_bike_rounded,
+                  color: Colors.indigo.shade200,
+                  size: 50,
+                ),
               ),
             ],
           ),
