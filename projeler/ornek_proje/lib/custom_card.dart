@@ -6,9 +6,6 @@ class CustomCardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // width: 400,
-      // height: 200,
-      // padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
       padding: EdgeInsets.all(20),
       margin: EdgeInsets.all(30),
       decoration: BoxDecoration(
@@ -20,14 +17,9 @@ class CustomCardView extends StatelessWidget {
             color: const Color.fromARGB(255, 53, 59, 97),
             blurRadius: 3,
             spreadRadius: 10,
-            offset: Offset(0, 10), // Gölgenin konumu
+            offset: Offset(0, 10),
           ),
         ],
-        /*gradient: LinearGradient(
-          colors: [const Color.fromARGB(255, 64, 242, 255)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),*/
       ),
       alignment: Alignment.center,
       child: Text("Harun", style: TextStyle(color: Colors.white, fontSize: 30)),
