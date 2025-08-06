@@ -12,17 +12,13 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Stack(
+              alignment: Alignment.center,
               children: [
                 Image.asset("assets/images/zikirmatik.png", width: 300),
+                Positioned(top: 50, right: 80, child: _counterText()),
 
-                const Positioned(
-                  top: 50,
-                  right: 80,
-                  child: Text(
-                    '500',
-                    style: TextStyle(fontSize: 50, color: Colors.white),
-                  ),
-                ),
+                Positioned(bottom: 30, child: _incrementButton()),
+                Positioned(right: 76, bottom: 114, child: _resetButton()),
               ],
             ),
           ],
@@ -30,4 +26,30 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
+  GestureDetector _resetButton() {
+    return GestureDetector(
+      onTap: () => print("Reset"),
+      child: Container(
+        width: 30,
+        height: 30,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(60)),
+      ),
+    );
+  }
+
+  Text _counterText() {
+    return Text('0', style: TextStyle(fontSize: 50, color: Colors.white));
+  }
+}
+
+GestureDetector _incrementButton() {
+  return GestureDetector(
+    onTap: () => print('Tıklandı'),
+    child: Container(
+      width: 90,
+      height: 90,
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(60)),
+    ),
+  );
 }
