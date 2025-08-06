@@ -10,7 +10,22 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Image.asset("assets/images/zikirmatik.png")],
+          children: [
+            Stack(
+              children: [
+                Image.asset("assets/images/zikirmatik.png", width: 300),
+
+                const Positioned(
+                  top: 50,
+                  right: 80,
+                  child: Text(
+                    '500',
+                    style: TextStyle(fontSize: 50, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
