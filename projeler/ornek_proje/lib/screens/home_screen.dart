@@ -8,68 +8,108 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    _counter++;
-    setState(() {});
-  }
-
-  void _resetCounter() {
-    _counter = 0;
-    setState(() {});
-  }
+  List letters = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF191919),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Image.asset("assets/images/zikirmatik.png", width: 300),
-                Positioned(top: 50, right: 80, child: _counterText()),
-
-                Positioned(bottom: 30, child: _incrementButton()),
-                Positioned(right: 76, bottom: 114, child: _resetButton()),
-              ],
-            ),
-          ],
+      body: ListView.builder(
+        itemCount: letters.length,
+        itemBuilder: (context, index) => ListTile(
+          title: Text("${index + 1}. letter of alphabet is ${letters[index]}"),
         ),
       ),
-    );
-  }
 
-  GestureDetector _resetButton() {
-    return GestureDetector(
-      onTap: () => _resetCounter(),
-      child: Container(
-        width: 30,
-        height: 30,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(60)),
+      /*
+      listview.separated widgetini kullanarak liste elemanları arasına separator ekleyebiliriz.
+      kullanımı oldukça basittir separatorBuilder ile her iki eleman arasına bir ayraç ekleyebiliriz.
+
+      ListView.separated(
+        itemCount: elemanlar.length,
+        itemBuilder: (context, index) => ListTile(
+          title: Text(
+            "${index + 1}. letter of alphabet is ${elemanlar[index]}",
+          ),
+        ),
+        separatorBuilder: (context, index) => const Divider(),
+      ), 
+      
+       */
+
+      /*
+      
+      BURADA ELEMEAN SAYISI AZ AMA EGER BURADAKI ELEMANLARIN SAYISI 1000 VEYA DAHA FAZLA OLURSA
+      O ZAMAN LISTVIEW YA DA DIGER METHODLARI KULLANMAK COK UYGUN OLMAZ CUNKU ORNEGIN LIST VIEW
+      TUM ELEMANLARI BIR ANDA RENDER EDER VE BU DA UYGULAMANIN YAVAŞLAMASINA VE KASMASINA NEDEN OLUR.
+      O YUZDEN EGER ELEMAN SAYISI AZ OLUNCA BU YONTEMLERI KULLANMAK DAHA UYGUN OLABILIR.
+      ELEMAN SAYISININ DAHA FAZLA OLDUĞU DURUMLARDA LISTVIEW.BUILDER KULLANMAK DAHA UYGUN OLUR. BU WIDGETI KULLANIRSAK ELEMANLARI EKRANA HEPSINI TEK SEFERDE VERMIYOOR SAYFAYI KAYDIRDIKCA DIGER ELEMANLARI YUKLER.
+
+      */
+
+      /* ListView(
+        children: List.generate(
+          elemanlar.length,
+          (index) => Container(
+            padding: const EdgeInsets.all(20),
+            margin: const EdgeInsets.all(20),
+            color: Colors.blue,
+            child: Text(elemanlar[index]),
+          ),
+        ),
       ),
-    );
-  }
+      */
 
-  Text _counterText() {
-    return Text(
-      '$_counter',
-      style: TextStyle(fontSize: 50, color: Colors.white),
-    );
-  }
+      /*SingleChildScrollView(
+        child: Column(
+          children: List.generate(
+            elemanlar.length,
+            (index) => Container(
+              padding: const EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
+              color: Colors.blue,
+              child: Text(elemanlar[index]),
+            ),
+          ),
 
-  GestureDetector _incrementButton() {
-    return GestureDetector(
-      onTap: () => _incrementCounter(),
-      child: Container(
-        width: 90,
-        height: 90,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(60)),
-      ),
+          elemanlar
+              .map(
+                (e) => Container(
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+                  color: Colors.blue,
+                  child: Text(e),
+                ),
+              )
+              .toList(),
+        ),
+      ),*/
     );
   }
 }
