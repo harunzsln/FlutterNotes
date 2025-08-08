@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class Zikirmatik extends StatefulWidget {
+  const Zikirmatik({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Zikirmatik> createState() => _ZikirmatikState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ZikirmatikState extends State<Zikirmatik> {
   int _counter = 0;
 
   void _incrementCounter() {
