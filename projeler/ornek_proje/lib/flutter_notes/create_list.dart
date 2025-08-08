@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ornek_proje/models/elements_model.dart';
 
 class CreateList extends StatefulWidget {
   const CreateList({super.key});
@@ -8,46 +9,38 @@ class CreateList extends StatefulWidget {
 }
 
 class _CreateListState extends State<CreateList> {
-  List letters = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
+  List<ElementsModel> elements = [
+    ElementsModel('Element 1', 'Subtitle 1'),
+    ElementsModel('Element 2', 'Subtitle 2'),
+    ElementsModel('Element 3', 'Subtitle 3'),
   ];
+
+  /*elements = [
+    {'title': 'element 1', 'subtitle': 'subtitle 1'},
+
+    {'title': 'element 2', 'subtitle': 'subtitle 2'},
+
+    {'title': 'element 3', 'subtitle': 'subtitle 3'},
+  ];*/
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemCount: letters.length,
+      body: ListView.separated(
+        itemCount: elements.length,
         itemBuilder: (context, index) => ListTile(
-          title: Text("${index + 1}. letter of alphabet is ${letters[index]}"),
+          title: Text(elements[index].title),
+          subtitle: Text(elements[index].subtitle),
         ),
+        separatorBuilder: (context, index) =>
+            const Divider(color: Colors.grey, height: 0),
       ),
+    );
+  }
+}
 
-      /*
+
+/*
       listview.separated widgetini kullanarak liste elemanları arasına separator ekleyebiliriz.
       kullanımı oldukça basittir separatorBuilder ile her iki eleman arasına bir ayraç ekleyebiliriz.
 
@@ -60,6 +53,15 @@ class _CreateListState extends State<CreateList> {
         ),
         separatorBuilder: (context, index) => const Divider(),
       ), 
+
+
+      ListView.builder(
+        itemCount: elements.length,
+        itemBuilder: (context, index) => ListTile(
+          title: Text(elements[index]['title']),
+          subtitle: Text(elements[index]['subtitle']),
+        ),
+      ),
       
        */
 
@@ -110,6 +112,3 @@ class _CreateListState extends State<CreateList> {
               .toList(),
         ),
       ),*/
-    );
-  }
-}
