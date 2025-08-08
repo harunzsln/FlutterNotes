@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class CreateList extends StatefulWidget {
+  const CreateList({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<CreateList> createState() => _CreateListState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _CreateListState extends State<CreateList> {
   List letters = [
     "a",
     "b",
