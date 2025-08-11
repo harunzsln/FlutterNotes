@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'flutter_notes/create_list.dart';
+import 'flutter_notes/home_screens.dart';
 
 void main() {
   runApp(myApp());
@@ -13,7 +13,7 @@ class myApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: "Fira Code"),
-      home: const CreateList(),
+      home: const HomeScreen(),
     );
   }
 }
