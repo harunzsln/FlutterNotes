@@ -11,9 +11,17 @@ class _ZikirmatikState extends State<Zikirmatik> {
   int _counter = 0;
 
   void _incrementCounter() {
-    _counter++;
-    setState(() {});
+    if (_counter >= 99999) {
+      return;
+    }
+
+    setState(() {
+      _counter++;
+    });
   }
+  /*  _counter++;
+    setState(() {});
+  }*/
 
   void _resetCounter() {
     _counter = 0;
