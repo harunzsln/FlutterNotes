@@ -1,3 +1,20 @@
+class UrunlerModel {
+  final List<Urun> urunler;
+  final List<Kategori> kategoriler;
+
+  UrunlerModel(this.urunler, this.kategoriler);
+
+  factory UrunlerModel.fromJson(Map<String, dynamic> json) {
+    final List jsonUrunler = json['urunler'];
+    final List jsonKategoriler = json['kategoriler'];
+
+    return UrunlerModel(
+      jsonUrunler.map((e) => Urun.fromJson(e)).toList(),
+      jsonKategoriler.map((e) => Kategori.fromJson(e)).toList(),
+    );
+  }
+}
+
 class Urun {
   final int id;
   final int kategori;
