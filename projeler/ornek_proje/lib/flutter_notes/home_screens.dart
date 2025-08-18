@@ -1,3 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String? email;
+
+  String? password;
+
+  void _getUserInfoFromDevice() async {
+    final prefs = await SharedPreferences.getInstance();
+    email = prefs.getString("email");
+    password = prefs.getString("password");
+  }
+
+  @override
+  void initState() {
+    _getUserInfoFromDevice();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(body: Center(child: Text("$email $password")));
+  }
+}
+
+/*
+
+
+
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -109,3 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
+
+ */

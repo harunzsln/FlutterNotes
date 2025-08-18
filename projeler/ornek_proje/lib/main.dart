@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'flutter_notes/home_screens.dart';
+//import 'flutter_notes/home_screens.dart';
+import 'flutter_notes/login_screen.dart';
 
 void main() {
   runApp(myApp());
@@ -13,7 +14,7 @@ class myApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: "Fira Code"),
-      home: const HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
